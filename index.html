@@ -1,12 +1,75 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Barbie Dungeon</title>
+    <style>
+        body {
+            background-color: #ff99cc;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkleAnimation 2s linear infinite;
+        }
+
+        @keyframes sparkleAnimation {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>CHRISTOPHER SHANNON</h1>
-    <P>THIS IS THE WEBSITE</P>
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const numberOfSparkles = 50;
+            const body = document.body;
+
+            for (let i = 0; i < numberOfSparkles; i++) {
+                createSparkle();
+            }
+
+            function createSparkle() {
+                const sparkle = document.createElement("div");
+                sparkle.classList.add("sparkle");
+
+                sparkle.style.top = `${Math.random() * 100}vh`;
+                sparkle.style.left = `${Math.random() * 100}vw`;
+
+                body.appendChild(sparkle);
+            }
+        });
+    </script>
+
+    <!-- "Barbie" text -->
+    <div style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); text-align: center; color: #fff; font-size: 36px;">
+        Barbie's Dungeon
+    </div>
+
+    <!-- Image in the center (now half the size) -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+        <img src="entrance.jpg" alt="Entrance" style="max-width: 50%; max-height: 50%;">
+    </div>
+
+    <!-- Add a link to "Enter the Dungeon" -->
+    <div style="position: absolute; top: 80%; left: 50%; transform: translateX(-50%); text-align: center;">
+        <a href="enter_the_dungeon.html" style="text-decoration: none; color: #fff; font-size: 24px; padding: 10px 20px; background-color: #333; border-radius: 5px;">Enter the Dungeon</a>
+    </div>
 </body>
 </html>
+
+
+
+
